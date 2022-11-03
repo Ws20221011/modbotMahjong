@@ -69,92 +69,19 @@ def callback():
 def handle_message(event):
     mtext = event.message.text
              
-    if mtext == '@預約':  
-        buttons_template_message = TemplateSendMessage(
-        alt_text='麻將預約系統',
-        template=ButtonsTemplate(
-            thumbnail_image_url='https://i.imgur.com/4LljfMm.png',
-            title='麻將預約系統',
-            text='選單功能',
-            actions=[
-                PostbackAction(
-                    label='預約系統',
-                    display_text='@我要預約',
-                    data='sendDatetime(event)'
-                ),
-                PostbackAction(
-                    label='預約查詢',
-                    display_text='我要預約',
-                    data='q2'
-                ),
-                PostbackAction(
-                    label='場次',
-                    display_text='我要預約',
-                    data='q3'
-                ),
-            ]
-        )
-    )
-        line_bot_api.reply_message(event.reply_token, buttons_template_message) 
-      
-    
-    elif mtext == '預約資料':  
-            try:
-                message=TextSendMessage(#文字傳送格式---------------
-                    text=strto()
-                )#文字傳送格式---------------
-                line_bot_api.reply_message(event.reply_token,message)
-            except:
-                line_bot_api.reply_message(event.reply_token,
-      
-                                           TextSendMessage(text='發生錯誤!'))
-    elif mtext == '@我要預約':
-         sendDatetime(event)            
-            
-def sendDatetime(event):
-    try:
-        carousel_template_message = TemplateSendMessage(
-                alt_text='功能選單',
-                template=ButtonsTemplate(
-                    thumbnail_image_url='https://i.imgur.com/3SvSaue.png',
-                    title='麻將預約',
-                    text='請點擊',
-                    actions=[
-                        DatetimePickerTemplateAction(
-                            label="選取日期",
-                            data="q1",#觸發 postback 事件
-                            #data="action=sell&mode=date",#觸發 postback 事件
-                            mode="date",
-                            #initial="new Date",
-                            #initial="2022-10-19",
-                            min="2022-10-01",
-                            max="2023-10-10"
-                        )     
-                              
-                    ]
-                )
-                  
-        )
-        line_bot_api.reply_message(event.reply_token, carousel_template_message)
-    except:
-        line_bot_api.reply_message(event.reply_token,
-                                   TextSendMessage(text='發生錯誤!'))      
+    if mtext == '#查詢#':  
+        try:
+            message=TextSendMessage(#文字傳送格式---------------
+                text=strto()
+            )#文字傳送格式---------------
+            line_bot_api.reply_message(event.reply_token,message)
+        except:
+            line_bot_api.reply_message(event.reply_token,
+  
+                                       TextSendMessage(text='發生錯誤!'))
+         
+ 
      
-@handler.add(PostbackEvent)  
-def handle_postback(event):
-    postback= event.postback.data
-    try:
-        if postback == "q1":
-            #if backdata.get('mode') == 'date':
-            dt ='日期為:'+ event.postback.params.get('date')#抓取輸入 日期
-            message = dt
-               
-            line_bot_api.reply_message(event.reply_token,TextSendMessage(message))
-    except:
-        line_bot_api.reply_message(event.reply_token,TextSendMessage('發生錯誤')) 
-        
-
-
 
 
         
