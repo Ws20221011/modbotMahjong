@@ -6,6 +6,9 @@ Created on Sun Oct 23 22:55:28 2022
 """
 
 import gspread
+from Mahjong import *
+
+
 
 #載入LineBot所需要的套件
 from flask import Flask, request, abort
@@ -27,7 +30,7 @@ import datetime
 from linebot.models import MessageEvent,TextSendMessage,TextSendMessage,ImageSendMessage,StickerSendMessage,LocationSendMessage,QuickReply,QuickReplyButton, MessageAction
 
  
-from Mahjong import *
+
 
 
 
@@ -72,7 +75,7 @@ def handle_message(event):
     if mtext == '#查詢#':  
         try:
             message=TextSendMessage(#文字傳送格式---------------
-                text= ff()
+                text=ff()
             )#文字傳送格式---------------
             line_bot_api.reply_message(event.reply_token,message)
         except:
