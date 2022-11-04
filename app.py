@@ -4,10 +4,10 @@ Created on Sun Oct 23 22:55:28 2022
 
 @author: User
 """
-
+"""
 import gspread
 from Mahjong import *
-
+"""
 
 
 #載入LineBot所需要的套件
