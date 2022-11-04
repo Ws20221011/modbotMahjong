@@ -75,12 +75,12 @@ def handle_message(event):
     if mtext == '#查詢#':
         try:
             message=TextSendMessage(#文字傳送格式---------------
-                text=ff()
+                text=dd()
             )#文字傳送格式---------------
             line_bot_api.reply_message(event.reply_token,message)
         except:
             line_bot_api.reply_message(event.reply_token,
-                                       TextSendMessage(text='發生錯誤!'))
+                                       TextSendMessage(text='資料不足'))
          
  
      
