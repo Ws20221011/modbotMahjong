@@ -35,10 +35,10 @@ from linebot.models import MessageEvent,TextSendMessage,TextSendMessage,ImageSen
 
 
 # 必須放上自己的Channel Access Token          #medbot 03
-line_bot_api = LineBotApi('/Hpu1Xs7VljOdUqGPbJ+fCqQoI7RVNMI33Q7PSOjavguWxXhDbWKDxZ8UVbso0K9TJVfeJCT0h1XTCUkiCvwLC+dOU5+ZSTilI8Qn8H8r9YkLCaaSO8lWk770XS0RJ6JAF8x+0NInAaRhNM/w7ztAQdB04t89/1O/w1cDnyilFU=')
+line_bot_api = LineBotApi('/Hpu1Xs7VljOdUqGPbJ+fCqQoI7RVNMI33Q7PSOjavguWxXhDbWKDxZ8UVbso0K9TJVfeJCT0h1XTCUkiCvwLC+dOU5+ZSTilI8Qn8H8r9YkLCaaSO8lWk770XS0RJ6JAF8x+0NInAaRhNM/w7z/tAQdBny/w7z/tAQdBny/w7z/tAQdBny')
 
 # 必須放上自己的Channel Secret
-handler = WebhookHandler('20c392f5eb85cd603d21ad94c05ec894')  #medbot 03
+handler = WebhookHandler('c8a14092281cef72ea0ca7fb76c3c122')  #medbot 03
 
 line_bot_api.push_message('U01d75620e9f2ce94285be32cce03989c', TextSendMessage(text='你可以開始了'))
                          
@@ -72,15 +72,14 @@ def callback():
 def handle_message(event):
     mtext = event.message.text
              
-    if mtext == '#查詢#':  
+    if mtext == '@傳送文字':
         try:
             message=TextSendMessage(#文字傳送格式---------------
-                text=ff()
+                text="我是 衰歌 \n 您好"
             )#文字傳送格式---------------
             line_bot_api.reply_message(event.reply_token,message)
         except:
             line_bot_api.reply_message(event.reply_token,
-  
                                        TextSendMessage(text='發生錯誤!'))
          
  
