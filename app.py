@@ -34,8 +34,8 @@ from linebot.models import MessageEvent,TextSendMessage,TextSendMessage,ImageSen
 
 
 
-# 必須放上自己的Channel Access Token          #medbot 03
-line_bot_api = LineBotApi('/Hpu1Xs7VljOdUqGPbJ+fCqQoI7RVNMI33Q7PSOjavguWxXhDbWKDxZ8UVbso0K9TJVfeJCT0h1XTCUkiCvwLC+dOU5+ZSTilI8Qn8H8r9YkLCaaSO8lWk770XS0RJ6JAF8x+0NInAaRhNM/w7z/tAQdBny/w7z/tAQdBny/w7z/tAQdBny')
+# 必須放上自己的Channel Access Token          #medbotma
+line_bot_api = LineBotApi('8+3WhZhpi6DtH9ngI04I9+APY+Lh/QovOIZr1iuqHtfUoq9p/fsTkeXqKQ6eDR/nTJVfeJCT0h1XTCUkiCvwLC+dOU5+ZSTilI8Qn8H8r9Z2lW9cLF71aDcqMnhH36uVrRqc+F5LliNPYyHht4QoQwdB04t89/1O/w1cDnyilFU=')
 
 # 必須放上自己的Channel Secret
 handler = WebhookHandler('c8a14092281cef72ea0ca7fb76c3c122')  #medbot 03
