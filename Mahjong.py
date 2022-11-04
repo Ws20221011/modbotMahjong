@@ -30,7 +30,7 @@ def ff():
     data3= (worksheet.get_all_values() ) #抓取工作表內的資料 **需先指定開啟 工作表 worksheet = sh.worksheet("背部") #選擇文件
     data4=data3[len(data3)-1]#取最後一筆   #data4=data3[len(data3)] #抓取最後三筆資料
     data5_1="預約者:"
-    data5_2="   時間:"
+    data5_2="    時間:"
     data5=data5_1+data4[1]+"\n"+data5_2+data4[2]
     return  data5
 
