@@ -72,10 +72,10 @@ def callback():
 def handle_message(event):
     mtext = event.message.text
              
-    if mtext == '@傳送文字':
+    if mtext == '#查詢#':
         try:
             message=TextSendMessage(#文字傳送格式---------------
-                text="我是 衰歌 \n 您好"
+                text=ff()
             )#文字傳送格式---------------
             line_bot_api.reply_message(event.reply_token,message)
         except:
