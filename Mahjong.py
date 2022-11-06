@@ -66,7 +66,7 @@ def dd():
     data5=[ data5_1+i[1]+"\n"+data5_2+i[2]+ data5_3+ data5_4+i[3]  for i in data4 ]
     
     data6=data5[0]+data5_3+data5[1]+data5_3+data5[2]
-    return  data4
+    return  data6
 
 
 
