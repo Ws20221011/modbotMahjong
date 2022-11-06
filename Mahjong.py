@@ -34,7 +34,7 @@ def ff():
     data5_1="預約者:"
     data5_2="    日期:"
     data5_3="    時間:"
-    data5=data5_1+data4[1]+"\n"+data5_2+data4[2]+data5_3+data4[3]
+    data5=data5_1+data4[1]+"\n"+data5_2+data4[2]+"\n"+data5_3+data4[3]
     return  data5
 
 
@@ -53,7 +53,7 @@ def dd():
          "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/wuwu-264%40my-project-workhard.iam.gserviceaccount.com"
     }
     gc = gspread.service_account_from_dict(credentials)
-    sh =gc .open("麻將預約資料庫")
+    sh =gc .open("麻將預約後台")
     worksheet_list = sh.worksheets()  #抓取 所有工作表名稱
     worksheet = sh.worksheet("麻將") #選擇工作表
     data3= (worksheet.get_all_values() ) #抓取工作表內的資料 **需先指定開啟 工作表 worksheet = sh.worksheet("背部") #選擇文件
@@ -62,7 +62,7 @@ def dd():
     data5_1="預約者:"
     data5_2="    日期:"
     data5_3="\n"
-    data5_4="時間:"
+    data5_4="    時間:"
     data5=[ data5_1+i[1]+"\n"+data5_2+i[2]+ data5_3+ data5_4+i[4]  for i in data4 ]
     
     data6=data5[0]+data5_3+data5[1]+data5_3+data5[2]
